@@ -1,11 +1,11 @@
-version: extensions/v1beta1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: demo
   labels:
     app: demo
 spec:
-  replica: 1
+  replicas: 1
   selector:
     matchLabels:
       app: demo
@@ -13,9 +13,9 @@ spec:
     metadata:
       labels:
         app: demo
-      spec:
-        containers:
-          - name: demo
-            image: cloudnatived/demo:hello
-            ports:
-              - containerPort: 8888
+    spec:
+      containers:
+        - name: demo
+          image: cloudnatived/demo:hello
+          ports:
+            - containerPort: 8888
