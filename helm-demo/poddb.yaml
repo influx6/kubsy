@@ -1,0 +1,10 @@
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: demo-pdb
+spec:
+  minAvailable: 3 # sets that atleast 3 pods must be left running.
+  # maxUnavailable: 10% to limit maximum allowed evicted pods
+  selector:
+    matchLabels:
+      app: demo

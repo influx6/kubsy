@@ -19,3 +19,10 @@ spec:
           image: cloudnatived/demo:hello
           ports:
             - containerPort: 8888
+          resources:
+            requests:
+              memory: "5Mi"
+              cpu: "10m"
+            limits:
+              memory: "20Mi"
+              cpu: "250m"
